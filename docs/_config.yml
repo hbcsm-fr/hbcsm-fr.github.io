@@ -1,0 +1,10 @@
+
+title: HBCSM
+description: >-
+  Site autour du Handball-club Saint-Maixentais
+baseurl: "https://hbcsm-fr.github.io"
+url: ""
+timezone: Europe/Paris
+
+# Build settings
+markdown: kramdown
