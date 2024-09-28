@@ -2,6 +2,8 @@
 layout: default
 title: Accueil
 permalink: /
+activejquery: true
+activecalendarstr: 'NO-CALENDAR'
 ---
 
 <!-- Fil d'ariane -->
@@ -14,6 +16,9 @@ permalink: /
 <!-- Corps -->
 <div class="container" >
   <div class="min-vh-100 d-inline-block" >
+    <div class="alert alert-primary" role="alert" >
+      Le site va être enrichi au fil de l'eau, merci de votre compréhension.
+    </div>
     <h1>Bienvenue au Handball Club Saint&#x2011;Maixentais !</h1>
     <h2>Une passion pour le handball à Saint&#x2011;Maixent&#x2011;l'École</h2>
     <p>

@@ -2,6 +2,8 @@
 layout: default
 title: Compatibilité
 permalink: /compatibilite/
+activejquery: true
+activecalendarstr: 'NO-CALENDAR'
 ---
 
 <!-- Fil d'ariane -->

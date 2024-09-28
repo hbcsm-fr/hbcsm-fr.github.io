@@ -2,6 +2,8 @@
 layout: default
 title: "Calendrier matchs : seniors"
 permalink: /seniors/matchs/
+activejquery: true
+activecalendarstr: 'SEN'
 ---
 
 <!-- Fil d'ariane -->
@@ -16,11 +18,47 @@ permalink: /seniors/matchs/
 <!-- Corps -->
 <div class="container" >
   <div class="min-vh-100 d-inline-block" >
-    <div class="d-flex justify-content-center">
+  <div id="warning-message" class="alert alert-warning" role="alert" style="display: none;" >
+    ...
+  </div>
+    <div id="waiting-message" class="d-flex justify-content-center" style="margin-bottom: 10%;" >
       <button class="btn btn-primary" type="button" disabled>
         <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
         <span role="status">Construction du calendrier en cours, veuillez patienter, merci &#9786;</span>
       </button>
+    </div>
+    <h2 id="next-match-title" style="display: none;" >Prochains matchs</h2>
+    <div class="list-group" id="next-match-group" style="display: none;" >
+      <span id="next-match" class="list-group-item list-group-item-action active placeholder-wave" display="display: none;" aria-current="true">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1 placeholder w-50"></h5>
+          <small class="placeholder w-25" ></small>
+        </div>
+        <p class="mb-1 placeholder w-50"></p>
+        <small class="placeholder w-50" ></small>
+      </span>
+      <span id="second-next-match" class="list-group-item list-group-item-action placeholder-wave" style="display: none;" >
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1 placeholder w-50"></h5>
+          <small class="text-body-secondary placeholder w-25"></small>
+        </div>
+        <p class="mb-1 placeholder w-50"></p>
+        <small class="text-body-secondary placeholder w-50"></small>
+      </span>
+    </div>
+    <h2 id="past-match-title" class="mt-4" style="display: none;" >Matchs passés</h2>
+    <p id="past-match-text" style="display: none;" >
+      Les résultats des match sont à retrouver sur nos réseaux ou sur le site de la fédération !
+    </p>
+    <div class="list-group" id="past-match-group" style="display: none;" >
+      <span class="list-group-item list-group-item-action placeholder-wave" id="past-match-placeholder" >
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1 placeholder w-50"></h5>
+          <small class="placeholder w-25" ></small>
+        </div>
+        <p class="mb-1 placeholder w-50"></p>
+        <small class="placeholder w-50" ></small>
+      </span>
     </div>
   </div>
 </div>

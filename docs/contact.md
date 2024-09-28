@@ -3,6 +3,7 @@ layout: default
 title: Contact
 permalink: /contact/
 activejquery: false
+activecalendarstr: 'NO-CALENDAR'
 ---
 
 <!-- Fil d'ariane -->
