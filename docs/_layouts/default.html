@@ -12,9 +12,17 @@
     <!-- Bandeau navigation en-tête -->
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{{ site.url }}">HBCSM</a>
+        <a class="navbar-brand" href="/">HBCSM</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                U11M <span id="menu-flag-u11m" class="badge text-bg-danger" style="display: none;" >ND</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{ site.url }}/U11/m/matchs/">Calendrier matchs</a></li>
+              </ul>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Seniors <span id="menu-flag-seniors" class="badge text-bg-danger" style="display: none;" >ND</span>
@@ -52,7 +60,7 @@
     <script src="/assets/js/jquery-1_12_4.js" ></script>
     {% endif %}
     <script src="/assets/js/js-events-manager-1_0_0.js" ></script>
-    <script src="/assets/js/matchs-manager-1_0_0.min.js" ></script>
+    <script src="/assets/js/matchs-manager-1_0_1.min.js" ></script>
     <script>
     let matchDb = new MatchDb();
     {% for dataGym in site.data.matchs_2024_2025.gymCollection %}
@@ -71,6 +79,20 @@
     ));
     {% endfor %}
     matchDb.addTeamMatchList(MatchExternalConstants.KEY_SENIOR_TEAM, seniorsTeamMatchList);
+    //
+    let u11MTeamMatchList = new TeamMatchList();
+    {% for dataMatchU11M in site.data.matchs_2024_2025.groupMatchCollection.U11M %}
+    u11MTeamMatchList.addTeamMatch(new TeamMatch(
+      DateUtils.convertStringToDate("{{ dataMatchU11M.start }}"),
+      {{ dataMatchU11M.gymId }},
+      [
+        {% for teamObj in dataMatchU11M.matchList %}
+        new Team("{{ teamObj.team }}"),
+        {% endfor %}
+      ]
+    ));
+    {% endfor %}
+    matchDb.addTeamMatchList(MatchExternalConstants.KEY_U11M_TEAM, u11MTeamMatchList);
     //
     
     
