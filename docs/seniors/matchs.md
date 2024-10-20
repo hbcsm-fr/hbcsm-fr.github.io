@@ -27,6 +27,7 @@ activecalendarstr: 'SEN'
         <span role="status">Construction du calendrier en cours, veuillez patienter, merci &#9786;</span>
       </button>
     </div>
+    <p id="generated-at" class="mb-1 placeholder w-50" style="display: none;" ></p>
     <h2 id="next-match-title" style="display: none;" >Prochains matchs</h2>
     <div class="list-group" id="next-match-group" style="display: none;" >
       <span id="next-match" class="list-group-item list-group-item-action active placeholder-wave" display="display: none;" aria-current="true">

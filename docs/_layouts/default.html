@@ -60,7 +60,7 @@
     <script src="/assets/js/jquery-1_12_4.js" ></script>
     {% endif %}
     <script src="/assets/js/js-events-manager-1_0_0.js" ></script>
-    <script src="/assets/js/matchs-manager-1_0_1.min.js" ></script>
+    <script src="/assets/js/matchs-manager-1_1_0.min.js" ></script>
     <script>
     let matchDb = new MatchDb();
     {% for dataGym in site.data.matchs_2024_2025.gymCollection %}
@@ -93,6 +93,8 @@
     ));
     {% endfor %}
     matchDb.addTeamMatchList(MatchExternalConstants.KEY_U11M_TEAM, u11MTeamMatchList);
+    //
+    matchDb.setGeneratedAt('{{ site.data.matchs_2024_2025.generatedDate }}');
     //
     
     
